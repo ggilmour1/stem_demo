@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+  <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+  <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+<body>
+
+<form id="signin-form">
+  <div class="image" style="text-align: center;">
+    <img src="assets/STEM-Logo-220801.svg" alt="Avatar" class="avatar">
+  </div>
+  <h2>Log me in</h2>
+
+  <div display: inline-block>Login | <a href="signUp.html">Sign up</a></div>
+  <div class="container">
+
+    <p id="error-message"></p>
+
+    <label for="username"><b>Username</b></label>
+    <input type="text" placeholder="Enter email address" id="username" name="username" autocomplete=false>
+
+    <label for="password"><b>Password</b></label>
+    <input type="password" id="password" placeholder="Enter password" name="password" required>
+    
+
+    <label>
+      <input for="showPassword" type="checkbox" id="showPassword"  name="showPassword"> Show Password
+    </label><br>
+    
+    <button id="submitForm" class="float-left submit-button" type="button">Submit</button>
+    
+    <label>
+      <input type="checkbox" name="remember"> Remember me
+    </label>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <a href="forgot_password.html" class="forgot-password-link">Forgot Password?</a>
+  </div>
+</form>
+
+<script>
+  document.getElementById('submitForm').onclick = function() {
+      var password = document.getElementById('password').value;
+      var username = document.getElementById('username').value;
+      var emailRegex = /^[a-zA-Z0-9._+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    
+      // Check if password is correct
+      if (username === "john@test.com" && password === "Password@123") {
+        console.log("Login success!");
+        var token = 'LogMeIn';
+        location.href = 'index.html?token=' + token;
+      } else if (!emailRegex.test(username)) {
+        document.getElementById('error-message').innerText = "Invalid email '"+username+"'.  Please enter an email address";
+        event.preventDefault();
+        return;
+      } else if (username !== "john@test.com")  {
+        document.getElementById('error-message').innerText = "Your email does not exist";
+        event.preventDefault();
+        return;
+      } else {
+        document.getElementById('error-message').innerText = "Your password is incorrect";
+        event.preventDefault();
+        return;
+      }
+    }
+
+  document.getElementById('showPassword').addEventListener('change', function(event) {
+    var passwordInput = document.getElementById('password');
+    if (this.checked) {
+      passwordInput.type = 'text';
+    } else {
+      passwordInput.type = 'password';
+    }
+  }
+);
+  </script>
+
+</body>
+</html>
