@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="/assets/images/favicon.svg">
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="stylesheets/style.css">
+    
+</head>
+<body>
+    <form>
+        <div class="container">
+            
+            <img src="assets/STEM-Logo-220801.svg" alt="Logo" class="logo">
+            <div class="content">
+                <h1>Welcome to How to be a Quality Engineer</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget risus vitae sapien consectetur maximus.</p>
+                <p> 
+                <img src="assets/software_tester.png" alt="software tester" class="page-img">
+                </p>
+                <p id="accountLink" style="display: none;">
+                    <a href="manageAccount.html" class="link">Manage Account</a>
+                    <br>
+                        <button onclick="Logout()">Log out</button>
+                </p>
+                <p id="signInLink">Already have an account? <a href="login.html" class="link">Sign In</a> or create a new account <a href="signUp.html" class="link">create account</a></p>
+            </div>
+        </div>
+    </form>
+
+    <script>
+
+        var authToken = getUrlParameter('token');
+        var userSignedIn = false;
+
+        if (authToken) {
+            userSignedIn = true; 
+        }
+        // Check if user is signed in (example)
+        // Change this to true if the user is signed in, false otherwise
+        if (userSignedIn) {
+            document.getElementById('accountLink').style.display = 'block';
+            document.getElementById('signInLink').style.display = 'none';
+        }
+
+        function logout() {
+            // Clear the token from localStorage or sessionStorage
+            localStorage.removeItem('authToken'); // If using localStorage
+            sessionStorage.removeItem('authToken'); // If using sessionStorage
+            
+            // Redirect to sign-in page
+            location.href = 'index.html';
+        }
+
+        // Function to get the token from localStorage or sessionStorage
+        function getToken() {
+            return localStorage.getItem('authToken') || sessionStorage.getItem('authToken');
+        }
+
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+      
+        }
+
+    </script>
+</body>
+</html>

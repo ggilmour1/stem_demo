@@ -1,0 +1,148 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center; height: 100vh;
+}
+form {
+    width: 400px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+  
+image {
+    align-content: space-around;
+    justify-content: center;
+    text-align: center;
+}
+
+page-img {
+  align-content: space-around;
+  justify-content: center;
+  text-align: center;
+}
+
+p [type="error-message"] {
+    color: red;
+    font-weight: bold;
+}
+
+p [type=home] {
+  font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: right;
+    align-items: right; 
+    height: 100vh;
+}
+  input[type=text], input[type=password], input[type=email], select, textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 6px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 4px;
+}
+
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  .cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+  }
+  
+  .imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+  }
+  
+  img.avatar {
+    width: 100%;
+    border-radius: 100%;
+    text-align: center;
+  }
+  
+  .container {
+    padding: 16px;
+  }
+  
+  span.psw {
+    float: right;
+    padding-top: 16px;
+  }
+  span.showPassword {
+    float: right;
+    padding-top: 8px;
+  }
+  .forgot-password-link {
+    font-size: 14px;
+    text-align: right;
+    display: block;
+    margin-top: -10px;
+    margin-bottom: 15px;
+  }
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  button:hover {
+    background-color: #45a049;
+  }
+  #error-message {
+    color: red;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  /* Change styles for span and cancel button on extra small screens */
+  @media screen and (max-width: 300px) {
+    span.psw {
+       display: block;
+       float: none;
+    }
+    .cancelbtn {
+       width: 100%;
+    }
+  }
+
+  .success-message {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+.success-message h2 {
+    color: hsl(#000);
+    text-align: left;
+}
