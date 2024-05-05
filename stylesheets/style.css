@@ -19,12 +19,14 @@ image {
     align-content: space-around;
     justify-content: center;
     text-align: center;
+    max-width: 250px;
 }
 
-page-img {
+page_img {
   align-content: space-around;
   justify-content: center;
   text-align: center;
+  max-width: 75%;
 }
 
 p [type="error-message"] {
@@ -87,6 +89,11 @@ p [type=home] {
     text-align: center;
   }
   
+  img.tester_img {
+    max-width: 100%;
+    border-radius: 100%;
+    text-align: center;
+  }
   .container {
     padding: 16px;
   }
