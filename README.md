@@ -31,9 +31,15 @@ window and navigate to the folder where the code is downloaded to.  Run the comm
 
 ``` python3 -m http.server -d /Users/ggilmour1/Projects/STEMdemo ```
 
-This will start a simpleHTTP server running on port 8000.  To access the page in a browser, go to 
+This will start a simpleHTTP server running on port 8000.  To access the page in a browser on a Mac, go to 
 
 ```  http://0.0.0.0:8000/index.html? ```
+
+If you are on Windows, it prefers the localhost, so either 
+``` http://localhost:8000/index.html ``` 
+or 
+``` http://127.0.0.1:8000/index.html ``` 
+will work. 
    
 Follow the onscreen options to navigate through the pages.  
 
